@@ -24,7 +24,7 @@ set number
 "set smartindent
 filetype indent on
 set scrolloff = 5
-set path + = ./headers/
+set path += ./headers/
 syntax on
 let python_highlight_builtins = 1
 au BufRead SCons* set ft=python
