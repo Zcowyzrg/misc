@@ -1,3 +1,14 @@
+# Soundcard
+
+The default seems to be the HDMI - change it to PCM
+
+## .asoundrc
+
+```
+defaults.pcm.card 1
+defaults.ctl.card 1
+```
+
 # Vim 
 
 ## .vimrc
@@ -76,4 +87,14 @@ include /usr/share/nano/sh.nanorc
 # Start windows and panes at 1, not 0
 set -g base-index 1
 setw -g pane-base-index 1
+```
+
+# i3
+## .config/i3/config
+
+```ini
+
+
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20  # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20  # decrease screen brightness
 ```
