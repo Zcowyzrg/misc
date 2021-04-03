@@ -16,17 +16,17 @@ map <F5> :set invnumber<CR>
 map <F7> :let @/ = ""<CR>
 map <F8> :make<CR>
 set nowrap
-set shiftwidth = 4
-set softtabstop = 4
-set tabstop = 8
+set shiftwidth=4
+set softtabstop=4
+set tabstop=8
 set expandtab
 set number
 "set smartindent
 filetype indent on
-set scrolloff = 5
-set path += ./headers/
+set scrolloff=5
+set path+=./headers/
 syntax on
-let python_highlight_builtins = 1
+let python_highlight_builtins=1
 au BufRead SCons* set ft=python
 ```
 
