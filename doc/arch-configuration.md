@@ -69,21 +69,19 @@ function set_prompt {
 ```
 
 **.nanorc**
-
 ```
 include /usr/share/nano/python.nanorc
 include /usr/share/nano/sh.nanorc
 ```
 
 **.tmuxrc**
-
 ```ini
 # Start windows and panes at 1, not 0
 set -g base-index 1
 setw -g pane-base-index 1
 ```
 
-**.gnupg/gpg/conf**
+**.gnupg/gpg.conf**
 ```
 personal-cipher-preferences AES256
 personal-digest-preferences SHA256
@@ -93,7 +91,7 @@ personal-digest-preferences SHA256
 
 ## Window manager - i3
 
-*.config/i3/config*
+**.config/i3/config**
 ```ini
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20  # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20  # decrease screen brightness
@@ -101,14 +99,14 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20  # decrease screen brightn
 
 ## Keyboard
 
-*.Xkbmap *
+**.Xkbmap**
 ```
 gb pl
 ```
 
 ## Terminal - URxvt
 
-*.Xresources*
+**.Xresources**
 ```
 URxvt.font: xft:Jetbrains Mono NL:pixelsize=15
 URxvt.background: gray10
