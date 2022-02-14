@@ -112,3 +112,11 @@ URxvt.font: xft:Jetbrains Mono NL:pixelsize=15
 URxvt.background: gray10
 URxvt.foreground: gray90
 ```
+
+## SSH Agent
+
+**.xprofile**
+```
+export SSH_AUTH_SOCK=/tmp/$USER-ssh-agent
+pgrep -U $USER ssh-agent > /dev/null || ssh-agent -a $SSH_AUTH_SOCK
+```

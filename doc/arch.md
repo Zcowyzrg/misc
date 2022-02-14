@@ -1,13 +1,13 @@
 
 # Installation media
 
-Create USB drive in GPT mode, with two partitions:
+Create USB drive in GPT mode (use `fdisk`), with two partitions:
 - EFI
 - VFAT (label: Samsung16)
 
 On the Samsung16 partition, the `/arch` directory contains `x86_64/airootfs.sfs` - the image with the installer (squashfs)
 
-UEFI will by default run `BOOT\BOOTx64.efi`. This can be a bootloader or also a shell. If the bootloader is systemd-boot, you can place shell in `\shellx64.efi` and there will be an automatically created entry for it in the bootloader menu.
+UEFI will by default run `EFI\BOOT\BOOTx64.efi`. This can be a bootloader but also can be a shell. If the bootloader is `systemd-boot`, you can place shell in `\shellx64.efi` and there will be an automatically created entry for it in the bootloader menu.
 
 The shell will run `startup.nsh` if it exists. The script can contain a command to boot linux.
 
