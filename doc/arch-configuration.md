@@ -2,7 +2,9 @@
 
 ## Soundcard
 
-The default seems to be the HDMI - change it to PCM
+The default seems to be the HDMI - change it to PCM.
+
+See also https://wiki.archlinux.org/title/Advanced_Linux_Sound_Architecture#Set_the_default_sound_card
 
 **.asoundrc**
 ```
@@ -116,7 +118,7 @@ URxvt.foreground: gray90
 ## SSH Agent
 
 **.xprofile**
-```
+```shell
 export SSH_AUTH_SOCK=/tmp/$USER-ssh-agent
 pgrep -U $USER ssh-agent > /dev/null || ssh-agent -a $SSH_AUTH_SOCK
 ```
