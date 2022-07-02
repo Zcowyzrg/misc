@@ -95,8 +95,10 @@ personal-digest-preferences SHA256
 
 **.config/i3/config**
 ```ini
+font pango:JetBrains Mono NL 14px
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20  # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20  # decrease screen brightness
+bindsym $mod+p exec ~/bin/screen-toggle.sh
 ```
 
 ## Keyboard
