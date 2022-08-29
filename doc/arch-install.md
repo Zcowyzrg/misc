@@ -21,7 +21,6 @@ e2label /dev/sdb2 ssdhome
 ## Arch bootstrap
 
 ```
-mkdir -p /dev/sdb1
 mount /dev/sdb1 /mnt -o relatime
 mount /dev/sdb2 /mnt/home/ -o relatime
 pacstrap -c /mnt base linux linux-firmware nano
