@@ -66,7 +66,7 @@ EnableNetworkConfiguration=true
 NameResolvingService=systemd
 ```
 
-## Boot
+## Boot - MBR
 
 /etc/mkinitcpio.conf
 ```
@@ -80,6 +80,40 @@ GRUB_CMDLINE_LINUX_DEFAULT="verbose"
 ```
 grub-install --target=i386-pc /dev/sdb
 ```
+
+## Boot - UEFI
+
+| Device | Mountpoint | Size | Type |
+|--------|------------|------|------|
+| /dev/sda2 | /efi     | 100M | EFI system |
+| /dev/sda5 | /boot   | 1G   | Linux extended boot |
+| /dev/sda6 | /       | 120G | Linux filesystem |
+
+Using [systemd-boot](https://wiki.archlinux.org/title/Systemd-boot) and separate partitions for `/efi` and `/boot` to allow for bigger kernel size. This is the content of existing 100M `/efi` partition:
+```
+/efi/EFI/Boot/bootx64.efi -- the same as systemd-bootx64.efi
+/efi/EFI/Microsoft/Boot/
+/efi/EFI/systemd/systemd-bootx64.efi
+/efi/loader/entries/a2.conf -- this one is not necessary, i.e. for test only
+/efi/loader/loader.conf
+   timeout 3
+/efi/initramfs-linux.img -- for test only
+/efi/shellx64.efi
+/efi/vmlinuz-linux -- test only
+```
+Boot partition content:
+```
+/boot/loader/entries/arch.conf
+   title Arch Linux
+   linux /vmlinuz-linux
+   initrd /intel-ucode.img
+   initrd /initramfs-linux.img
+   options root="UUID=4db760df-1940-40ff-a391-82c40722a7cf" rw
+/boot/initramfs-linux.img
+/boot/vmlinuz-linux
+```
+
+Use `bootctl update` to update bootloader.
 
 ## Tweaks
 
